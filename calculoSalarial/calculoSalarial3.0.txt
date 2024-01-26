@@ -1,0 +1,40 @@
+INICIAR
+    LER numero(salario)
+
+
+    SE (salario <= 1.412.00) 
+        FAZER inss= (salario * 0.075)
+    SENAO 
+        SE (salario < 2.666.69) 
+            FAZER inss= (salario * 0.09) 
+        SENAO 
+            SE (salario < 4.000.04)
+                FAZER inss= (salario *0.12)
+            SENAO
+                FAZER inss= (salario * 0.14)
+                ESCREVER('O desconto do INSS será de R$' + inss+ ",00  ")
+                       
+
+
+    SE (salario <= 2112.00)ENTAO 
+        FAZER irpf = 0
+    SENAO 
+        SE (salario <= 2826.65)ENTAO 
+            FAZER irpf= (salario * 0.075); 
+        SENAO 
+            SE (salario <= 3751.05)ENTAO
+                FAZER irpf= (salario *0.15);
+            SENAO 
+                SE (salario <=4664.68) ENTAO
+                    FAZER irpf= (salario * 0.225);
+                SENAO
+                    irpf = salario * 0,275;
+
+        FAZER salarioLiquido = numero (salario-inss-irpf)
+            ESCREVER('O desconto do IRPF será de R$' + irpf+ ",00  ")
+            ESCREVER("Seu salário liquido para ser feliz é R$" + salarioLiquido+ ",00 ")
+        
+FINALIZAR
+                    
+                    
+      

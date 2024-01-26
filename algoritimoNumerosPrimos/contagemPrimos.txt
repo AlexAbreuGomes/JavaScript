@@ -1,0 +1,31 @@
+Explicação Passo a Passo do Código:
+
+Declaração de Variáveis:
+
+var ContInicio = 1; e var ContFim = 50;: Atribui o valor 1 à variável ContInicio e o valor 50 à variável ContFim.
+Loop Externo (while):
+
+while (ContInicio <= ContFim) {: O loop continuará enquanto ContInicio for menor ou igual a ContFim.
+Inicialização do Loop Interno (while):
+
+var divisor = 2;: Inicialização da variável divisor com o valor 2.
+Loop Interno (while):
+
+while (divisor < ContInicio && ContInicio % divisor !== 0) {: Loop interno que verifica se ContInicio é divisível por algum número entre 2 e ContInicio - 1.
+Condição de Saída do Loop Interno:
+
+ContInicio % divisor !== 0: Verifica se o resto da divisão de ContInicio por divisor é diferente de zero.
+Verificação e Impressão:
+
+divisor === ContInicio && console.log(ContInicio);: Executa o console.log(ContInicio) somente se a condição divisor === ContInicio for verdadeira.
+Incremento de ContInicio:
+
+ContInicio++;: Incremento de ContInicio após cada iteração do loop.
+Operadores Utilizados no Código:
+
+Operador de Atribuição =
+Operadores de Comparação < e <=
+Operador de Igualdade Estrita ===
+Operador de Diferença Estrita !==
+Operador Lógico "E" &&
+Operador de Incremento ++

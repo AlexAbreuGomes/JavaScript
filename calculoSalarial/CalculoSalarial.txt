@@ -1,0 +1,15 @@
+INICIAR
+    LER salario
+
+    SE (salario =<1.412.00) 
+        FAZER (salario * 0.075)
+        SENAO SE (salario <2.666.69) 
+            FAZER (salario * 0.09) 
+        SENAO SE (salario <4.000.04)
+            FAZER(salario *0.12)
+        SENAO
+            FAZER (salario * 0.14)
+FINALIZAR                        
+                    
+                    
+      
