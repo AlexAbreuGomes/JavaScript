@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Adivinhação de Palavras</title>
+  <link rel="stylesheet" href="jogoDeAdivinhacao.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Jogo de Adivinhação de Palavras</h1>
+    <div id="puzzle-container"></div>
+    <div id="guess-container">
+      <label for="guess">Adivinhe a palavra:</label>
+      <input type="text" id="guess" />
+      <button onclick="checkGuess()">Verificar</button>
+      <p id="feedback"></p>
+    </div>
+  </div>
+
+  <script src="jogoDeAdivinhacao.js"></script>
+</body>
+</html>
