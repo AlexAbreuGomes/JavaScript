@@ -1,56 +1,70 @@
-var palavras = [
-    [['c','o','r','i','n','t','h','i','a','n','s'],['tristeza']],
-    [['h','a','m','i','l','t','o','n'],['Maior']],
-    [['j','a','v','a'],['linguagem']],
-    [['M', 'a', 'ç', 'ã'], ['Fruta']],
-    [['S', 'o', 'l'], ['Astro']],
-    [['L', 'i', 'v', 'r', 'o'], ['Leitura']],
-    [['G', 'a', 't', 'o'], ['Animal']],
-    [['A', 'z', 'u', 'l'], ['Cor']],
-    [['P', 'i', 'a', 'n', 'o'], ['Música']],
-    [['M', 'o', 'n', 't', 'a', 'n', 'h', 'a'], ['Elevação']],
-    [['C', 'a', 'f', 'é'], ['Bebida']],
-    [['V', 'o', 'o'], ['Ação']],
-    [['A', 'b', 'r', 'a', 'ç', 'o'], ['Carinho']],
-    [['R', 'i', 'o'], ['Água']],
-    [['I', 'n', 'v', 'e', 'r', 'n', 'o'], ['Estação']],
-    [['F', 'a', 'r', 'o', 'l'], ['Luz']],
-    [['T', 'r', 'a', 'v', 'e', 's', 's', 'e', 'i', 'r', 'o'], ['Apoio']],
-    [['R', 'i', 's', 'o'], ['Alegria']],
-    [['C', 'o', 'r', 'r', 'e', 'r'], ['Velocidade']],
-    [['J', 'a', 'r', 'd', 'i', 'm'], ['Natureza']],
-    [['L', 'u', 'a'], ['Celestial']],
-    [['A', 'v', 'e', 'n', 't', 'u', 'r', 'a'], ['Jornada']],
-    [['C', 'â', 'm', 'e', 'r', 'a'], ['Fotografia']],
-    [['P', 'o', 'e', 's', 'i', 'a'], ['Expressão']],
-    [['S', 'u', 's', 'p', 'i', 'r', 'o'], ['Respiração']],
-    [['O', 'c', 'e', 'a', 'n', 'o'], ['Mar']],
-    [['l','a','n','t','e','r','n','a'], ['Luz']],
-    [['D', 'e', 's', 'e', 'j', 'o'], ['Anseio']],
-    [['E', 's', 't', 'r', 'e', 'l', 'a'], ['Celestial']],
-    [['S', 'o', 'r', 'r', 'i', 's', 'o'], ['Felicidade']],
-    [['S', 'i', 'l', 'ê', 'n', 'c', 'i', 'o'], ['Quietude']],
-    [['V', 'i', 'a', 'g', 'e', 'm'], ['Jornada']],
-    [['G', 'i', 'r', 'a', 's', 's', 'o', 'l'], ['Flor']],
-    [['S', 'e', 'r', 'e', 'n', 'i', 'd', 'a', 'd', 'e'], ['Calma']],
-    [['A', 'r', 'c', 'o', '-', 'í', 'r', 'i', 's'], ['Cores']],
-    [['M', 'e', 'm', 'ó', 'r', 'i', 'a'], ['Lembrança']],
-    [['F', 'r', 'a', 'g', 'r', 'â', 'n', 'c', 'i', 'a'], ['Perfume']],
-    [['B', 'r', 'i', 's', 'a'], ['Vento']],
-    [['E', 's', 'p', 'e', 'r', 'a', 'n', 'ç', 'a'], ['Esperança']],
-    [['C', 'a', 'c', 'h', 'o', 'e', 'i', 'r', 'a'], ['Cheiro']],
-    [['C', 'a', 's', 't', 'e', 'l', 'o'], ['Fortaleza']],
-    [['R', 'a', 's', 'c', 'u', 'n', 'h', 'o'], ['Esboço']],
-    [['H', 'o', 'r', 'i', 'z', 'o', 'n', 't', 'e'], ['Vista']],
-    [['S', 'a', 'u', 'd', 'a', 'd', 'e'], ['Sentimento']],
-    [['C', 'a', 'n', 'ç', 'ã', 'o'], ['Música']],
-    [['T', 'e', 'r', 'n', 'u', 'r', 'a'], ['Carinho']],
-    [['P', 'e', 'n', 'u', 'm', 'b', 'r', 'a'], ['Sombra']],
-    [['I', 'm', 'a', 'g', 'i', 'n', 'a', 'ç', 'ã', 'o'], ['Criatividade']],
-    [['A', 'm', 'i', 'z', 'a', 'd', 'e'], ['Relação']],
-    [['S', 'o', 'n', 'h', 'o'], ['Sonhar']]
-       
-]
-console.log ( palavras[40][0][6] );
-palavras.push([['a','l','e','x',],['nome']])
-console.log(palavras)
+
+    const palavras = [
+        [['c','o','r','i','n','t','h','i','a','n','s'],'tristeza'],
+        [['h','a','m','i','l','t','o','n'],'Maior'],
+        [['j','a','v','a'],'linguagem'],
+        [['m','a','ç','ã'],'Fruta'],
+        [['s','o','l'],'Astro'],
+        [['l','i','v','r','o'],'Leitura'],
+        [['g','a','t','o'],'Animal'],
+        [['a','z','u','l'],'Cor'],
+        [['p','i','a','n','o'],'Música'],
+        [['m','o','n','t','a','n','h','a'],'Elevação'],
+        [['c','a','f','é'],'Bebida'],
+        [['v','o','o'],'Ação'],
+        [['a','b','r','a','ç','o'],'Carinho'],
+        [['r','i','o'],'Água'],
+        [['i','n','v','e','r','n','o'],'Estação'],
+        [['f','a','r','o','l'],'Luz'],
+        [['t','r','a','v','e','s','s','e','i','r','o'],'Apoio'],
+        [['r','i','s','o'],'Alegria'],
+        [['c','o','r','r','e','r'],'Velocidade'],
+        [['j','a','r','d','i','m'],'Natureza'],
+        [['l','u','a'],'Celestial'],
+        [['a','v','e','n','t','u','r','a'],'Jornada'],
+        [['c','â','m','e','r','a'],'Fotografia'],
+        [['p','o','e','s','i','a'],'Expressão'],
+        [['s','u','s','p','i','r','o'],'Respiração'],
+        [['o','c','e','a','n','o'],'Mar'],
+        [['l','a','n','t','e','r','n','a'],'Luz'],
+        [['d','e','s','e','j','o'],'Anseio'],
+        [['e','s','t','r','e','l','a'],'Celestial'],
+        [['s','o','r','r','i','s','o'],'Felicidade'],
+        [['s','i','l','ê','n','c','i','o'],'Quietude'],
+        [['v','i','a','g','e','m'],'Jornada'],
+        [['g','i','r','a','s','s','o','l'],'Flor'],
+        [['s','e','r','e','n','i','d','a','d','e'],'Calma'],
+        [['a','r','c','o','-','í','r','i','s'],'Cores'],
+        [['m','e','m','ó','r','i','a'],'Lembrança'],
+        [['f','r','a','g','r','â','n','c','i','a'],'Perfume'],
+        [['b','r','i','s','a'],'Vento'],
+        [['e','s','p','e','r','a','n','ç','a'],'Esperança'],
+        [['c','a','c','h','o','e','i','r','a'],'Cheiro'],
+        [['c','a','s','t','e','l','o'],'Fortaleza'],
+        [['r','a','s','c','u','n','h','o'],'Esboço'],
+        [['h','o','r','i','z','o','n','t','e'],'Vista'],
+        [['s','a','u','d','a','d','e'],'Sentimento'],
+        [['c','a','n','ç','ã','o'],'Música'],
+        [['t','e','r','n','u','r','a'],'Carinho'],
+        [['p','e','n','u','m','b','r','a'],'Sombra'],
+        [['i','m','a','g','i','n','a','ç','ã','o'],'Criatividade'],
+        [['a','m','i','z','a','d','e'],'Relação'],
+        [['s','o','n','h','o'],'Sonhar']
+    ];
+    
+
+function palavraAleatoria() {
+    // Gera um índice aleatório entre 0 e o comprimento da matriz
+    const indiceAleatorio = Math.floor(Math.random() * palavras.length);
+
+    // Retorna a submatriz na posição do índice aleatório
+    return palavras[indiceAleatorio];
+}
+
+// Exemplo de uso
+const palavraEscolhida = palavraAleatoria();
+const palavra = palavraEscolhida[0]; // A palavra está no índice 0 da submatriz
+const dica = palavraEscolhida[1]; // A dica está no índice 1 da submatriz
+
+console.log("Palavra:", palavra);
+console.log("Dica:", dica);
