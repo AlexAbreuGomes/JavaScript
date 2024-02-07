@@ -1,167 +1,124 @@
 const palavras = [
-    ['corinthians', 'tristeza'],
-    ['hamilton', 'Maior'],
-    ['java', 'linguagem'],
-    ['maçã', 'Fruta'],
-    ['sol', 'Astro'],
-    ['livro', 'Leitura'],
-    ['gato', 'Animal'],
-    ['azul', 'Cor'],
-    ['piano', 'Música'],
+    ['corinthians', 'Time'],
+    ['hamilton', 'Piloto'],
+    ['computador', 'Eletrônico'],
     ['montanha', 'Elevação'],
-    ['café', 'Bebida'],
-    ['voo', 'Ação'],
-    ['abraço', 'Carinho'],
-    ['rio', 'Água'],
-    ['inverno', 'Estação'],
-    ['farol', 'Luz'],
-    ['travesseiro', 'Apoio'],
-    ['riso', 'Alegria'],
-    ['correr', 'Velocidade'],
-    ['jardim', 'Natureza'],
-    ['lua', 'Celestial'],
-    ['aventura', 'Jornada'],
-    ['câmera', 'Fotografia'],
-    ['poesia', 'Expressão'],
-    ['suspiro', 'Respiração'],
-    ['oceano', 'Mar'],
-    ['lanterna', 'Luz'],
-    ['desejo', 'Anseio'],
-    ['estrela', 'Celestial'],
-    ['sorriso', 'Felicidade'],
-    ['silêncio', 'Quietude'],
-    ['viagem', 'Jornada'],
-    ['girassol', 'Flor'],
-    ['serenidade', 'Calma'],
-    ['arco-íris', 'Cores'],
-    ['memória', 'Lembrança'],
-    ['fragrância', 'Perfume'],
-    ['brisa', 'Vento'],
-    ['cachoeira', 'Cheiro'],
-    ['castelo', 'Fortaleza'],
-    ['rascunho', 'Esboço'],
-    ['horizonte', 'Vista'],
-    ['saudade', 'Sentimento'],
-    ['canção', 'Música'],
-    ['ternura', 'Carinho'],
-    ['penumbra', 'Sombra'],
-    ['imaginação', 'Criatividade'],
-    ['amizade', 'Relação'],
-    ['sonho', 'Sonhar']
+    ['travesseiro', 'Dormir'],
+    ['correr', 'Movimento'],
+    ['jardim', 'Plantas'],
+    ['aventura', 'Emoção'],
+    ['fotografia', 'Imagem'],
+    ['biblioteca', 'Livros'],
+    ['guitarra', 'Música'],
+    ['astronauta', 'Espaço'],
+    ['hamburguer', 'Comida'],
+    ['escola', 'Ensino'],
+    ['televisão', 'TV'],
+    ['engenharia', 'Profissão'],
+    ['dinossauro', 'Pré-história'],
+    ['sapateiro', 'Conserto'],
+    ['elefante', 'Animal'],
+    ['tecnologia', 'Inovação'],
+    ['cachoeira', 'Água'],
+    ['bicicleta', 'Rodas'],
+    ['supermercado', 'Compra'],
+    ['espetáculo', 'Show'],
+    ['aventureiro', 'Exploração'],
+    ['computação', 'Ciência'],
+    ['bibliotecário', 'Biblioteca'],
+    ['crocodilo', 'Réptil'],
+    ['paralelepípedo', 'Forma'],
+    ['ventilador', 'Ar'],
+    ['pássaro', 'Asas'],
+    ['pernambuco', 'Estado'],
+    ['camiseta', 'Roupa'],
+    ['motorista', 'Carro'],
+    ['arquitetura', 'Construção'],
+    ['parque', 'Diversão'],
+    ['hidroavião', 'Avião'],
+    ['refrigerante', 'Bebida'],
+    ['astronomia', 'Estrelas'],
+    ['alface', 'Verde'],
+    ['computador', 'Tecnologia'],
+    ['sapateiro', 'Calçados'],
+    ['espectador', 'Assistir'],
+    ['caminhão', 'Transporte'],
+    ['guitarra', 'Instrumento'],
+    ['geladeira', 'Gelar']
 ];
 
 // Declaração das variáveis necessárias para o jogo
-let palavraEscolhida = []; // Armazena a palavra escolhida para o jogo
-let dica = ''; // Armazena a dica associada à palavra
-let letrasErradas = []; // Armazena as letras que foram escolhidas erroneamente pelo jogador
-let letrasDescobertas = []; // Armazena as letras descobertas pelo jogador na palavra escolhida
-let tentativasRestantes = 0; // Armazena o número de tentativas restantes para o jogador
+var palavraEscolhida = []; // Armazena a palavra escolhida para o jogo
+var dica = ''; // Armazena a dica associada à palavra
+var letrasErradas = []; // Armazena as letras que foram escolhidas erroneamente pelo jogador
+var letrasDescobertas = []; // Armazena as letras descobertas pelo jogador na palavra escolhida
+var tentativasRestantes = 0; // Armazena o número de tentativas restantes para o jogador
 
-// Função que retorna uma palavra aleatória e sua dica a partir do array 'palavras'
-function palavraAleatoria() {
-    // Gera um índice aleatório dentro dos limites do array 'palavras'
-    const indiceAleatorio = Math.floor(Math.random() * palavras.length);
-    // Retorna a palavra e a dica associada ao índice gerado aleatoriamente
-    return palavras[indiceAleatorio];
+function palavraAleatoria() {   // Função que retorna uma palavra aleatória e sua dica a partir do array 'palavras'
+    var indiceAleatorio = Math.floor(Math.random() * palavras.length);  // Gera um índice aleatório dentro dos limites do array 'palavras'
+    return palavras[indiceAleatorio];  // Retorna a palavra e a dica associada ao índice gerado aleatoriamente
 }
 
-
 function iniciarJogo() {
-    const escolha = palavraAleatoria();
+    var escolha = palavraAleatoria();
     palavraEscolhida = escolha[0].split('');
     dica = escolha[1];
     letrasErradas = [];
     letrasDescobertas = [];
 
-    // Inicializa letrasDescobertas com underlines
-    for (let i = 0; i < palavraEscolhida.length; i++) {
+    for (let i = 0; i < palavraEscolhida.length; i++) {  // Inicializa letrasDescobertas com underlines
         letrasDescobertas.push("_");
     }
 
-    // Define o número máximo de tentativas como metade do comprimento da palavra mais 1
-    tentativasRestantes = Math.ceil(palavraEscolhida.length / 2) + 1;
-
-    // Exibe a dica na tela
-    document.getElementById('dica').innerText = `Dica: ${dica}`;
-
-    // Exibe a palavra com espaços entre as letras na tela
-    document.getElementById('palavra').innerText = `Palavra: ${letrasDescobertas.join(" ")}`;
-
-    // Exibe o número de tentativas restantes na tela
-    document.getElementById('tentativas-restantes').innerText = `Tentativas restantes: ${tentativasRestantes}`;
+    tentativasRestantes = Math.ceil(palavraEscolhida.length / 2) + 1;  // Define o número máximo de tentativas como metade do comprimento da palavra mais 1
+    document.getElementById('dica').innerText = `Dica: ${dica}`;  // Exibe a dica na tela
+    document.getElementById('palavra').innerText = `Palavra: ${letrasDescobertas.join(" ")}`;  // Exibe a palavra com espaços entre as letras na tela
+    document.getElementById('tentativas-restantes').innerText = `Tentativas restantes: ${tentativasRestantes}`;  // Exibe o número de tentativas restantes na tela
 }
 
-// Função que inicializa o jogo, escolhendo uma palavra aleatória e exibindo-a na tela
-function iniciarJogo() {
-    // Escolhe uma palavra aleatória do array 'palavras'
-    const escolha = palavraAleatoria();
-    // Divide a palavra em letras individuais e armazena em 'palavraEscolhida'
-    palavraEscolhida = escolha[0].split('');
-    // Armazena a dica associada à palavra
-    dica = escolha[1];
-    // Inicializa as listas de letras erradas e descobertas
-    letrasErradas = [];
+function iniciarJogo() {// Função que inicializa o jogo, escolhendo uma palavra aleatória e exibindo-a na tela
+    var escolha = palavraAleatoria();// Escolhe uma palavra aleatória do array 'palavras'
+    palavraEscolhida = escolha[0].split('');  // Divide a palavra em letras individuais e armazena em 'palavraEscolhida'
+    dica = escolha[1]; // Armazena a dica associada à palavra
+    letrasErradas = []; // Inicializa as listas de letras erradas e descobertas
     letrasDescobertas = [];
 
-    // Inicializa letrasDescobertas com underlines
-    for (let i = 0; i < palavraEscolhida.length; i++) {
+    for (let i = 0; i < palavraEscolhida.length; i++) {    // Inicializa letrasDescobertas com underlines
         letrasDescobertas.push("_");
     }
+    tentativasRestantes = Math.ceil(palavraEscolhida.length / 2) + 1;  // Define o número máximo de tentativas como metade do comprimento da palavra mais 1
 
-    // Define o número máximo de tentativas como metade do comprimento da palavra mais 1
-    tentativasRestantes = Math.ceil(palavraEscolhida.length / 2) + 1;
-
-    // Exibe a dica na tela
-    document.getElementById('dica').innerText = `Dica: ${dica}`;
-
-    // Exibe a palavra com espaços entre as letras na tela
-    document.getElementById('palavra').innerText = `Palavra: ${letrasDescobertas.join(" ")}`;
-
-    // Exibe o número de tentativas restantes na tela
-    document.getElementById('tentativas-restantes').innerText = `Tentativas restantes: ${tentativasRestantes}`;
+    document.getElementById('dica').innerText = `Dica: ${dica}`;   // Exibe a dica na tela
+    document.getElementById('palavra').innerText = `Palavra: ${letrasDescobertas.join(" ")}`;  // Exibe a palavra com espaços entre as letras na tela
+    document.getElementById('tentativas-restantes').innerText = `Tentativas restantes: ${tentativasRestantes}`;    // Exibe o número de tentativas restantes na tela
 }
 
-// Função que processa uma rodada de jogo quando o jogador tenta adivinhar uma letra
-function jogarRodada() {
-    // Verifica se ainda há tentativas restantes
-    if (tentativasRestantes <= 0) {
+function jogarRodada() {  // Função que processa uma rodada de jogo quando o jogador tenta adivinhar uma letra   
+    if (tentativasRestantes <= 0) {  // Verifica se ainda há tentativas restantes
         alert("Você excedeu o número máximo de tentativas!");
         verificarPalavraCompleta();
         return;
     }
 
-    // Obtém a letra digitada pelo jogador e a converte para minúsculas
-    const letra = document.getElementById('letra').value.toLowerCase();
+   var letra = document.getElementById('letra').value.toLowerCase();   // Obtém a letra digitada pelo jogador e a converte para minúsculas
+    if (letrasDescobertas.includes("_")) {   // Verifica se ainda existem letras a serem descobertas na palavra    
+        tentativasRestantes--;  // Decrementa o número de tentativas restantes
 
-    // Verifica se ainda existem letras a serem descobertas na palavra
-    if (letrasDescobertas.includes("_")) {
-        // Decrementa o número de tentativas restantes
-        tentativasRestantes--;
-
-        // Verifica se a letra está presente na palavra escolhida
-        if (palavraEscolhida.includes(letra)) {
-            // Se sim, percorre a palavra e substitui os underlines pelas letras corretas
-            for (let i = 0; i < palavraEscolhida.length; i++) {
-                if (palavraEscolhida[i] === letra) {
-                    letrasDescobertas[i] = letra;
+        if (palavraEscolhida.includes(letra)) {  // Verifica se a letra está presente na palavra escolhida  
+            for (let i = 0; i < palavraEscolhida.length; i++) {    // Se sim, percorre a palavra e substitui os underlines pelas letras corretas
+                if (palavraEscolhida[i] === letra) {  // ele analisa se é estritamente igual
+                    letrasDescobertas[i] = letra;  // atribuiçao
                 }
             }
         } else {
-            // Se não, adiciona a letra à lista de letras erradas
-            letrasErradas.push(letra);
+            letrasErradas.push(letra);  // Se não, adiciona a letra à lista de letras erradas
         }
 
-        // Atualiza a exibição da palavra na tela
-        document.getElementById('palavra').innerText = `Palavra: ${letrasDescobertas.join(" ")}`;
+        document.getElementById('palavra').innerText = `Palavra: ${letrasDescobertas.join(" ")}`;   // Atualiza a exibição da palavra na tela
+        document.getElementById('letras-erradas').innerText = `Letras erradas: ${letrasErradas.join(", ")}`;  // Atualiza a exibição das letras erradas na tela
+        document.getElementById('tentativas-restantes').innerText = `Tentativas restantes: ${tentativasRestantes}`;  // Atualiza o número de tentativas restantes na tela
 
-        // Atualiza a exibição das letras erradas na tela
-        document.getElementById('letras-erradas').innerText = `Letras erradas: ${letrasErradas.join(", ")}`;
-
-        // Atualiza o número de tentativas restantes na tela
-        document.getElementById('tentativas-restantes').innerText = `Tentativas restantes: ${tentativasRestantes}`;
-
-        // Verifica se todas as letras foram descobertas
-        if (!letrasDescobertas.includes("_")) {
+        if (!letrasDescobertas.includes("_")) {  // Verifica se todas as letras foram descobertas
             alert("Parabéns! Você acertou a palavra!");
         }
     } else {
@@ -169,21 +126,15 @@ function jogarRodada() {
     }
 }
 
-// Função que verifica se o jogador excedeu o número de tentativas e tenta adivinhar a palavra completa
-function verificarPalavraCompleta() {
-    // Solicita ao jogador que digite a palavra completa
-    const palavraDigitada = prompt("Você excedeu o número de tentativas! Digite a palavra completa:");
-    // Verifica se a palavra digitada pelo jogador está correta
-    if (palavraDigitada.toLowerCase() === palavraEscolhida.join("")) {
+function verificarPalavraCompleta() {  // Função que verifica se o jogador excedeu o número de tentativas e tenta adivinhar a palavra completa
+    var palavraDigitada = prompt("Você excedeu o número de tentativas! Digite a palavra completa:"); // Solicita ao jogador que digite a palavra completa
+    if (palavraDigitada.toLowerCase() === palavraEscolhida.join("")) {      // Verifica se a palavra digitada pelo jogador está correta
         alert("Parabéns! Você acertou a palavra!");
     } else {
         alert("A palavra digitada está incorreta. Tente novamente!");
     }
 }
 
-// Chamando a função para iniciar o jogo quando a página é carregada
-iniciarJogo();
-
-// Adicionando evento de clique ao botão para processar uma rodada de jogo
-document.getElementById('botao-jogar').addEventListener('click', jogarRodada);
+iniciarJogo();  // Chamando a função para iniciar o jogo quando a página é carregada
+document.getElementById('botao-jogar').addEventListener('click', jogarRodada);  // Adicionando evento de clique ao botão para processar uma rodada de jogo
 
