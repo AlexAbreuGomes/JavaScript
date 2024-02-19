@@ -25,7 +25,7 @@ class Consulta {
     medico;
     data_consulta;
     constructor(paciente, especialidade, medico, data_consulta) {
-        this.paciente = Paciente;
+        this.paciente = paciente;
         this.especialidade = especialidade;
         this.medico = medico;
         this.data_consulta = data_consulta;
@@ -38,4 +38,12 @@ class Paciente {
     endereço;
     data_nascimento;
     consultas;
+    constructor(nome, idade, cpf, endereço, data_nascimento, consultas) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cpf = cpf;
+        this.endereço = endereço;
+        this.data_nascimento = data_nascimento;
+        this.consultas = consultas;
+    }
 }
