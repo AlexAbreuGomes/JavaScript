@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+  }
+  
+  .habits-container {
+    margin-top: 30px;
+  }
+  
+  #habits-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #habits-list li {
+    margin-bottom: 10px;
+  }
