@@ -19,18 +19,6 @@ class Funcionario {
         this.escolaridade_funcionario = escolaridade_funcionario;
     }
 }
-class Consulta {
-    paciente;
-    especialidade;
-    medico;
-    data_consulta;
-    constructor(paciente, especialidade, medico, data_consulta) {
-        this.paciente = paciente;
-        this.especialidade = especialidade;
-        this.medico = medico;
-        this.data_consulta = data_consulta;
-    }
-}
 class Paciente {
     nome;
     idade;
@@ -45,5 +33,17 @@ class Paciente {
         this.endereço = endereço;
         this.data_nascimento = data_nascimento;
         this.consultas = consultas;
+    }
+}
+class Consulta {
+    paciente;
+    especialidade;
+    medico;
+    data_consulta;
+    constructor(paciente, especialidade, medico, data_consulta) {
+        this.paciente = paciente;
+        this.especialidade = especialidade;
+        this.medico = medico;
+        this.data_consulta = data_consulta;
     }
 }

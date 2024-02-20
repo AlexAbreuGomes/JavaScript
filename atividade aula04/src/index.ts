@@ -28,6 +28,29 @@ class Funcionario {
     }
 }
 
+class Paciente {
+    nome: string;
+    idade: number;
+    cpf: string;
+    endereço: string;
+    data_nascimento: Date;
+    consultas: Consulta;
+    constructor(
+        nome: string,
+        idade: number,
+        cpf: string,
+        endereço: string,
+        data_nascimento: Date,
+        consultas: Consulta){
+        this.nome = nome
+        this.idade = idade
+        this.cpf = cpf
+        this.endereço = endereço
+        this.data_nascimento = data_nascimento
+        this.consultas = consultas
+        }
+}
+
 class Consulta {
 
     paciente: Paciente;
@@ -46,27 +69,3 @@ class Consulta {
     }
 }
 
-class Paciente {
-    nome: string;
-    idade: number;
-    cpf: string;
-    endereço: string;
-    data_nascimento: Date;
-    consultas: Consulta[];
-    constructor(
-        nome: string,
-        idade: number,
-        cpf: string,
-        endereço: string,
-        data_nascimento: Date,
-        consultas: Consulta[]){
-        this.nome = nome
-        this.idade = idade
-        this.cpf = cpf
-        this.endereço = endereço
-        this.data_nascimento = data_nascimento
-        this.consultas = consultas
-        }
-
-
-}
