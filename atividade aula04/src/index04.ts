@@ -63,9 +63,8 @@ class Comunicacao {
         this.mensagens = mensagens
         this.arquivos_compartilhados = arquivos_compartilhados
         this.discusoes = discusoes    
-        }
+    }
 }
-
 const equipeProjeto1 = new Equipe("Ana", "Carlos", "Maria");
 const equipeProjeto2 = new Equipe("Pedro", "Carla", "Luiz");
 const projeto1 = new Projetos(1, "Desenvolvimento de Sistema de Gerenciamento", new Date("2024-02-10"), new Date("2024-06-30"), equipeProjeto1);

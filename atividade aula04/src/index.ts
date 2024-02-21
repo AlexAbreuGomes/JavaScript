@@ -70,7 +70,6 @@ class Consulta {
         this.data_consulta = data_consulta
     }
 }
-
 const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2-22-2024'))
 
 console.log(funcionario1,paciente1,consulta1)

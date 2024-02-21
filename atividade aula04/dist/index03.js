@@ -34,18 +34,20 @@ class Conta {
 }
 const conta1 = new Conta(cliente1);
 class Transacao {
+    cliente;
     descricao;
     valor;
     categoria;
     data;
-    constructor(descricao, valor, categoria, data) {
+    constructor(cliente, descricao, valor, categoria, data) {
+        this.cliente = cliente;
         this.descricao = descricao;
         this.valor = valor;
         this.categoria = categoria;
         this.data = data;
     }
 }
-const transacao1 = new Transacao('mercado', 20, 'alimentos', new Date("2023-2-25"));
+const transacao1 = new Transacao(cliente1, 'mercado', 20, 'alimentos', new Date("2023-2-25"));
 class MetaFinanceira {
     cliente;
     progresso;
@@ -55,4 +57,4 @@ class MetaFinanceira {
     }
 }
 const meta1 = new MetaFinanceira(cliente1, 20000);
-console.log(meta1);
+console.log(meta1, transacao1);
