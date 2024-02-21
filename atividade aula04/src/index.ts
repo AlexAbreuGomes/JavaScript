@@ -27,6 +27,7 @@ class Funcionario {
         this.escolaridade_funcionario = escolaridade_funcionario
     }
 }
+const funcionario1 = new Funcionario("João Silva", "Médico", "Cardiologia", "Rua X, Potengi", 35, 123456, 2015, "Graduação em Medicina");
 
 class Paciente {
     nome: string;
@@ -34,22 +35,23 @@ class Paciente {
     cpf: string;
     endereço: string;
     data_nascimento: Date;
-    consultas: Consulta;
+    consultas: Funcionario;
     constructor(
         nome: string,
         idade: number,
         cpf: string,
         endereço: string,
         data_nascimento: Date,
-        consultas: Consulta){
+        consultas: Funcionario) { 
         this.nome = nome
         this.idade = idade
         this.cpf = cpf
         this.endereço = endereço
         this.data_nascimento = data_nascimento
         this.consultas = consultas
-        }
+    }
 }
+const paciente1 = new Paciente("Carlos Oliveira", 45, "789.123.456-78", "Rua Y, Igapó", new Date("1979-08-15"),funcionario1);
 
 class Consulta {
 
@@ -69,3 +71,6 @@ class Consulta {
     }
 }
 
+const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2-22-2024'))
+
+console.log(funcionario1,paciente1,consulta1)
