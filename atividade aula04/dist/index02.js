@@ -58,11 +58,13 @@ class Usuarios {
         console.log(`Data de Nascimento: ${this.idade.toLocaleDateString('pt-BR')}`);
         console.log(`E-mail: ${this.email}`);
         console.log(`Endereço: ${this.endereco}`);
-        console.log(`Livros Solicitados: ${}`);
+        console.log(`Livros Solicitados: ${livro1.titulo_livro}  ${livro1.categoria}`);
+        console.log(`Livros Devolvidos: ${livro2.titulo_livro} ${livro2.categoria}`);
+        console.log(`Data Devolução:`);
         console.log(`----------------------------------------------------------`);
     }
 }
-const user1 = new Usuarios('Alex', new Date('1995-8-24'), 'a.g.gomesalex@gmail.com', 'rua macae , 130', livro2, livro1, new Date("2023-2-22"));
+const user1 = new Usuarios('Alex', new Date('1995-8-24'), 'a.g.gomesalex@gmail.com', 'rua macae , 130', livro1, livro2, new Date("2023-2-22"));
 //console.log(user1)
 class EmprestimosLivros {
     info_usuario;
