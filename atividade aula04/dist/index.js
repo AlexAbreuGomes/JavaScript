@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Funcionario = void 0;
 class Pessoa {
     nome;
     endereco;
@@ -17,7 +19,7 @@ class Pessoa {
         this.genero = genero;
     }
     mostrarDados() {
-        console.log(`----------------------------Dados Pessoa--------------------------------`);
+        //console.log(`----------------------------Dados Pessoa--------------------------------`);
         console.log(`Nome: ${this.nome}`);
         console.log(`Endereço: ${this.endereco}`);
         console.log(`E-mail: ${this.email}`);
@@ -26,8 +28,8 @@ class Pessoa {
         console.log(`CPF: ${this.cpf}`);
         if (this.genero) {
             console.log(`Genero: ${this.genero}`);
-            console.log(`------------------------------------------------------------------------`);
         }
+        //console.log(`------------------------------------------------------------------------`);
     }
 }
 class Funcionario extends Pessoa {
@@ -46,22 +48,18 @@ class Funcionario extends Pessoa {
     }
     mostrarDados() {
         console.log(`----------Dados do Funcionario--------------------------------`);
-        console.log(`Nome do Funcionario: ${this.nome}`);
-        console.log(`email: ${this.email}`);
-        console.log(`CPF: ${this.cpf}`);
-        console.log(`Telefone: ${this.telefone}`);
+        super.mostrarDados();
         console.log(`Cargo: ${this.cargo_funcionario}`);
         console.log(`Especialidade: ${this.especialidade}`);
-        console.log(`Endereço ${this.endereco}`);
-        console.log(`Idade: ${this.data_nascimento.toLocaleDateString('pt-BR')}`);
         console.log(`Matricula: ${this.matricula}`);
         console.log(`Admissão: ${this.ano_admissao.toLocaleDateString('pt-BR')}`);
         console.log(`Formação: ${this.formacao}`);
         console.log('--------------------------------------------------------------');
     }
 }
+exports.Funcionario = Funcionario;
 const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
-console.log(funcionario1.mostrarDados());
+funcionario1.mostrarDados();
 class Paciente extends Pessoa {
     consultas;
     constructor(nome, endereco, email, data_nascimento, telefone, cpf, consultas, genero) {
@@ -69,46 +67,34 @@ class Paciente extends Pessoa {
         this.consultas = consultas;
     }
     mostrarDados2() {
-        console.log(`---------------Dados do Paciente------------------------------`);
-        console.log(`Nome do Paciente: ${this.nome}`);
-        console.log(`Data de Nascimento: ${this.data_nascimento.toLocaleDateString('pt-BR')}`);
-        console.log(`CPF: ${this.cpf}`);
-        console.log(`Endereço: ${this.endereco}`);
+        console.log(`-------------------------paciente----------------------------`);
+        super.mostrarDados();
         console.log(`Consulta: ${(funcionario1.especialidade)}`);
-        console.log(`Nome do Médico: ${this}`);
         console.log('-------------------------------------------------------------');
     }
 }
-const paciente1 = new Paciente("Ana Silva", "Rua das Flores, 123", "ana@example.com", new Date(1995, 3, 10), "(00) 1234-5678", "987.654.321-00", funcionario1, "Feminino");
-console.log(paciente1.mostrarDados2());
-/*class Consulta {
-
-    paciente: Paciente;
-    especialidade: string;
-    medico: string;
-    data_consulta: Date;
-    constructor(
-        paciente: Paciente,
-        especialidade: string,
-        medico: string,
-        data_consulta: Date) {
-        this.paciente = paciente
-        this.especialidade = especialidade
-        this.medico = medico
-        this.data_consulta = data_consulta
+const paciente1 = new Paciente("Ana Silva", "Rua das Flores, 123", "ana@example.com", new Date('1995-3-10'), "(00) 1234-5678", "987.654.321-00", funcionario1, "Feminino");
+paciente1.mostrarDados2();
+class Consulta {
+    paciente;
+    especialidade;
+    medico;
+    data_consulta;
+    constructor(paciente, especialidade, medico, data_consulta) {
+        this.paciente = paciente;
+        this.especialidade = especialidade;
+        this.medico = medico;
+        this.data_consulta = data_consulta;
     }
-
     mostrarDados3() {
         console.log(`---------------Dados da Consulta-----------------------------`);
         console.log(`Nome do Paciente: ${paciente1.nome}`);
         console.log(`Especialidade: ${funcionario1.especialidade}`);
-        console.log(`Médico: ${funcionario1.nome_funcionario}`);
+        console.log(`Médico: ${funcionario1.nome}`);
         console.log(`Data da Consulta: ${this.data_consulta.toLocaleDateString('pt-BR')}`);
         console.log(`Consulta: ${funcionario1.especialidade}`);
         console.log('-------------------------------------------------------------');
     }
 }
 const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2024-2-2'));
-console.log(consulta1.mostrarDados3());
-
-//console.log(funcionario1,paciente1,consulta1)*/ 
+consulta1.mostrarDados3();
