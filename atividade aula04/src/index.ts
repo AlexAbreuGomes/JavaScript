@@ -2,11 +2,11 @@ export class Pessoa {
     constructor(
     public nome: string,
     public endereco: string,
-    public email: string,
+    protected email: string,
     public data_nascimento: Date,
-    public telefone: string,
-    public cpf: string,
-    public genero?: string) {}
+    private telefone: string,
+    protected cpf: string,
+    protected genero?: string) {}
 
     mostrarDados() {
         //console.log(`----------------------------Dados Pessoa--------------------------------`);
@@ -23,7 +23,7 @@ export class Pessoa {
     }
 }
 
-/*export class Funcionario extends Pessoa {
+export class Funcionario extends Pessoa {
     cargo_funcionario: string;
     especialidade: string;
     matricula: number;
@@ -67,7 +67,7 @@ export class Pessoa {
     }
 
 }
-const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
+/*const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
 
 
 funcionario1.mostrarDados();

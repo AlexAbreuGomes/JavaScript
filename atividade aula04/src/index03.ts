@@ -1,5 +1,6 @@
 class Conta {
-    public tipo_conta: string;
+    private tipo_conta: string;
+    private data_abertuta: Date;
 
     constructor(
         tipo_conta: string) {}
@@ -13,16 +14,15 @@ class Conta {
 class CadastroUser extends Conta
 {
     nome: string;
-    cpf: string;
-    endereco: string;
-    data_nasc: Date;
-    profissao: string;
-    tipo_conta: string;
-    saldo_pessoal: number;
-    receita: number;
-    despesas: number;
-    historico_transacao: number;
-    valor_meta: number;
+    private cpf: string;
+    public endereco: string;
+    public data_nasc: Date;
+    public profissao: string;
+    private saldo_pessoal: number;
+    private receita: number;
+    private despesas: number;
+    private historico_transacao: number;
+    public valor_meta: number;
 
     constructor(
         nome: string,

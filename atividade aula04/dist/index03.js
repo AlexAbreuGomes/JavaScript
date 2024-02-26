@@ -1,6 +1,7 @@
 "use strict";
 class Conta {
     tipo_conta;
+    data_abertuta;
     constructor(tipo_conta) { }
     mostrarDados() {
         console.log(`Conta: ${this.tipo_conta}`);
@@ -12,7 +13,6 @@ class CadastroUser extends Conta {
     endereco;
     data_nasc;
     profissao;
-    tipo_conta;
     saldo_pessoal;
     receita;
     despesas;

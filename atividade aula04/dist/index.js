@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Pessoa = void 0;
+exports.Funcionario = exports.Pessoa = void 0;
 class Pessoa {
     nome;
     endereco;
@@ -33,41 +33,23 @@ class Pessoa {
     }
 }
 exports.Pessoa = Pessoa;
-/*export class Funcionario extends Pessoa {
-    cargo_funcionario: string;
-    especialidade: string;
-    matricula: number;
-    ano_admissao: Date;
-    formacao: string;
-
-    constructor(
-        nome: string,
-        cpf: string,
-        email: string,
-        telefone: string,
-        cargo_funcionario: string,
-        especialidade: string,
-        endereco: string,
-        data_nascimento: Date,
-        matricula: number,
-        ano_admissao: Date,
-        formacao: string,
-        genero: string) {
-
+class Funcionario extends Pessoa {
+    cargo_funcionario;
+    especialidade;
+    matricula;
+    ano_admissao;
+    formacao;
+    constructor(nome, cpf, email, telefone, cargo_funcionario, especialidade, endereco, data_nascimento, matricula, ano_admissao, formacao, genero) {
         super(nome, endereco, email, data_nascimento, telefone, cpf, genero);
-        this.cargo_funcionario = cargo_funcionario
-        this.especialidade = especialidade
-        this.matricula = matricula
-        this.ano_admissao = ano_admissao
-        this.formacao = formacao
-
-
+        this.cargo_funcionario = cargo_funcionario;
+        this.especialidade = especialidade;
+        this.matricula = matricula;
+        this.ano_admissao = ano_admissao;
+        this.formacao = formacao;
     }
-
-
     mostrarDados() {
         console.log(`----------Dados do Funcionario--------------------------------`);
-        super.mostrarDados()
+        super.mostrarDados();
         console.log(`Cargo: ${this.cargo_funcionario}`);
         console.log(`Especialidade: ${this.especialidade}`);
         console.log(`Matricula: ${this.matricula}`);
@@ -75,9 +57,9 @@ exports.Pessoa = Pessoa;
         console.log(`Formação: ${this.formacao}`);
         console.log('--------------------------------------------------------------');
     }
-
 }
-const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
+exports.Funcionario = Funcionario;
+/*const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
 
 
 funcionario1.mostrarDados();
