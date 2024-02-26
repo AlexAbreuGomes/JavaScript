@@ -1,5 +1,12 @@
 "use strict";
-class CadastroUser {
+class Conta {
+    tipo_conta;
+    constructor(tipo_conta) { }
+    mostrarDados() {
+        console.log(`Conta: ${this.tipo_conta}`);
+    }
+}
+class CadastroUser extends Conta {
     nome;
     cpf;
     endereco;
@@ -26,13 +33,6 @@ class CadastroUser {
     }
 }
 const cliente1 = new CadastroUser('Maria Silva', '123.456.789-10', 'Potengi', new Date('1985-5-15'), 'Professora', 'corrente', 20000, 2000, 1000, 2, 100000);
-class Conta {
-    dados_conta;
-    constructor(dados_conta) {
-        this.dados_conta = dados_conta;
-    }
-}
-const conta1 = new Conta(cliente1);
 class Transacao {
     cliente;
     descricao;

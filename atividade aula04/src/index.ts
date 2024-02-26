@@ -1,4 +1,4 @@
-class Pessoa {
+export class Pessoa {
     constructor(
     public nome: string,
     public endereco: string,
@@ -23,7 +23,7 @@ class Pessoa {
     }
 }
 
-export class Funcionario extends Pessoa {
+/*export class Funcionario extends Pessoa {
     cargo_funcionario: string;
     especialidade: string;
     matricula: number;
@@ -66,7 +66,8 @@ export class Funcionario extends Pessoa {
         console.log('--------------------------------------------------------------');
     }
 
-}const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
+}
+const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Cadiologista", "Rua das Flores, 123", new Date('1990-5-15'), 1001, new Date('2018-8-1'), "Medicina", "");
 
 
 funcionario1.mostrarDados();
@@ -129,5 +130,5 @@ class Consulta {
     }
 }
 const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2024-2-2'));
-consulta1.mostrarDados3();
+consulta1.mostrarDados3();*/
  

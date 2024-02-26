@@ -1,3 +1,5 @@
+import { Pessoa } from './index'
+
 class CadastroLivros {
     titulo_livro: string;
     autor_livro: string;
@@ -21,7 +23,7 @@ class CadastroLivros {
         this.quantidade = quantidade
     }
 
-    mostrarDados(){
+    mostrarDados() {
         console.log(`----------Cadastro de livro--------------------------------`);
         console.log(`Titulo de Livro: ${this.titulo_livro}`);
         console.log(`Autor: ${this.autor_livro}`);
@@ -37,53 +39,38 @@ const livro2 = new CadastroLivros('O Senhor dos Anéis', 'J.R.R. Tolkien', 'Harp
 const livro3 = new CadastroLivros('Código Da Vinci', 'Dan Brown', 'Arqueiro', 'mistério', true, 7);
 const livro4 = new CadastroLivros('Percy Jackson e o Ladrão de Raios', 'Rick Riordan', 'Intrínseca', 'fantasia', true, 3);
 const livro5 = new CadastroLivros('O Poder do Hábito', 'Charles Duhigg', 'Objetiva', 'autoajuda', true, 8);
-console.log(livro1.mostrarDados());
-console.log(livro2.mostrarDados());
-console.log(livro3.mostrarDados());
-console.log(livro4.mostrarDados());
-console.log(livro5.mostrarDados());
+livro1.mostrarDados();
+livro2.mostrarDados();
+livro3.mostrarDados();
+livro4.mostrarDados();
+livro5.mostrarDados();
 
-
-class Usuarios {
-    nome: string;
-    idade: Date;
-    email: string;
-    endereco: string;
-    livros_solicitados: CadastroLivros;
-    livros_devolvovidos: CadastroLivros;
-    data_solicitacao: Date;
-
+class Usuarios extends Pessoa {
     constructor(
-        nome: string,
-        idade: Date,
-        email: string,
-        endereco: string,
-        livros_solicitados: CadastroLivros,
-        livros_devolvovidos: CadastroLivros,
-        data_solicitacao: Date) {
-        this.nome = nome
-        this.idade = idade
-        this.email = email
-        this.endereco = endereco
-        this.livros_solicitados = livros_solicitados
-        this.livros_devolvovidos = livros_devolvovidos
-        this.data_solicitacao = data_solicitacao
+        public nome: string,
+        public endereco: string,
+        public email: string,
+        public data_nascimento: Date,
+        public telefone: string,
+        public cpf: string,
+        public livros_solicitados: CadastroLivros,
+        public livros_devolvovidos: CadastroLivros,
+        public data_solicitacao: Date,
+        public genero: string) {
+        super(nome, endereco, email, data_nascimento, telefone, cpf, genero)
+        this.livros_devolvovidos = livros_solicitados
+        this, livros_devolvovidos = livros_devolvovidos
     }
-
-    mostrarDados2(){
-        console.log(`----------Cadastro de Usuarios-----------------------------`);
-        console.log(`Nome: ${this.nome}`);
-        console.log(`Data de Nascimento: ${this.idade.toLocaleDateString('pt-BR')}`);
-        console.log(`E-mail: ${this.email}`);
-        console.log(`Endereço: ${this.endereco}`);
+    dadosUsuario() {
+        console.log(`----------Cadastro de Usuarios-----------------------------------`);
+        super.mostrarDados()
         console.log(`Livros Solicitados: ${livro1.titulo_livro}  ${livro1.categoria}`);
         console.log(`Livros Devolvidos: ${livro2.titulo_livro} ${livro2.categoria}`);
-        console.log(`Data Devolução:`);
-        console.log(`----------------------------------------------------------`);
+        console.log(`-----------------------------------------------------------------`);
     }
-}
-const user1 = new Usuarios('Alex', new Date('1995-8-24'), 'a.g.gomesalex@gmail.com', 'rua macae , 130', livro1, livro2, new Date("2023-2-22"))
-//console.log(user1)
+}  
+const user1 = new Usuarios('Alex', 'rua macaé, 310', 'a.g.gomesalex@gmail.com', new Date('1995-8-24'), '(84)9999-9999', '111.111.111-66', livro1, livro2, new Date("2023-2-22"), 'masculino')
+user1.dadosUsuario()
 
 class EmprestimosLivros {
     info_usuario: Usuarios;
@@ -103,4 +90,4 @@ class EmprestimosLivros {
     }
 }
 const relatorio_emprestimos = new EmprestimosLivros(user1, livro1, new Date("2023-2-22"), new Date("2023-11-20"))
-//console.log(relatorio_emprestimos)
+console.log(relatorio_emprestimos)
