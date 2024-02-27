@@ -1,4 +1,4 @@
-class Equipe {
+/* class Equipe {
     membro1: string;
     membro2: string;
     membro3: string;
@@ -73,4 +73,4 @@ const tarefa1 = new Tarefa("Implementar cadastro de usuários", equipeProjeto1, 
 const tarefa2 = new Tarefa("Desenvolver interface de usuário", equipeProjeto2, new Date("2024-04-30"));
 const comunicacaoProjeto1 = new Comunicacao("Discussão sobre requisitos", "Documentação de Requisitos", "Revisão do Escopo");
 const comunicacaoProjeto2 = new Comunicacao("Reunião de b  rainstorming", "Design Mockups", "Decisões de UX/UI");
-console.log (equipeProjeto1,tarefa2,comunicacaoProjeto2);
+console.log (equipeProjeto1,tarefa2,comunicacaoProjeto2); */

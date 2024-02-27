@@ -1,4 +1,4 @@
-import { Pessoa } from './index'
+/* import { Pessoa } from './index'
 
 class CadastroLivros {
     titulo_livro: string;
@@ -90,4 +90,4 @@ class EmprestimosLivros {
     }
 }
 const relatorio_emprestimos = new EmprestimosLivros(user1, livro1, new Date("2023-2-22"), new Date("2023-11-20"))
-console.log(relatorio_emprestimos)
+console.log(relatorio_emprestimos) */

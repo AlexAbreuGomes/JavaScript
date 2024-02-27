@@ -1,4 +1,4 @@
-import { Funcionario } from './index'
+/* import { Funcionario } from './index'
 
 const funcionario2 = new Funcionario("João", "123.456.789-10", "joaoM@example.com", "(00) 1234-5578", "Desenvolvedor ", "front end", "Rua das tulipas, 12", new Date('1980-5-15'), 1100, new Date('2020-8-1'), "engenheiro de software", "Masculino")
 
@@ -116,7 +116,7 @@ class BackEnd extends Desenvolvedor {
     seguranca_web: boolean;
     versionamento_backend: boolean;
 
-       constructor(
+    constructor(
         nome: string,
         cpf: string,
         email: string,
@@ -135,17 +135,17 @@ class BackEnd extends Desenvolvedor {
         integracao_api: boolean,
         seguranca_web: boolean,
         versionamento_backend: boolean,
-        genero: string){
+        genero: string) {
         super(nome, cpf, email, telefone, cargo_funcionario, especialidade, endereco, data_nascimento, matricula, ano_admissao, formacao, habilidades, ano_experiencia, genero);
         this.linguagens_servidor = linguagens_servidor;
         this.banco_de_dados = banco_de_dados;
         this.integracao_api = integracao_api;
         this.seguranca_web = seguranca_web;
         this.versionamento_backend = versionamento_backend;
-        }
-        DadosBackend(){
-            super.DadosDev()
-            console.log(`Linguagens de Servidor: ${this.linguagens_servidor}`);
+    }
+    DadosBackend() {
+        super.DadosDev()
+        console.log(`Linguagens de Servidor: ${this.linguagens_servidor}`);
         if (this.banco_de_dados) {
             console.log(`Conhecimento em Banco de Dados: SIM`);
         } else {
@@ -191,10 +191,63 @@ const dev_back1 = new BackEnd(
 
 dev_back1.DadosBackend();
 
-/*class FullStack extends Desenvolvedor {
-    frameworks_ui: [];
-    linguagens_servidor: [];
+class FullStack extends Desenvolvedor {
     frontend_backend: boolean;
     visao_holistica: boolean;
+    colaborativo: boolean;
+    frameworks_ui: string[];
+    linguagens_servidor: boolean;
+    banco_de_dados: boolean;
+    seguranca_web: boolean;
+    integracao_api: boolean;
+    versionamento: boolean;
 
-}*/
+
+    constructor(
+        nome: string,
+        cpf: string,
+        email: string,
+        telefone: string,
+        cargo_funcionario: string,
+        especialidade: string,
+        endereco: string,
+        data_nascimento: Date,
+        matricula: number,
+        ano_admissao: Date,
+        formacao: string,
+        habilidades: string[],
+        ano_experiencia: number,
+        frontend_backend: boolean,
+        visao_holistica: boolean,
+        colaborativo: boolean,
+        frameworks_ui: string[],
+        linguagens_servidor: boolean,
+        banco_de_dados: boolean,
+        seguranca_web: boolean,
+        integracao_api: boolean,
+        versionamento: boolean,
+        genero: string) {
+        super(nome, cpf, email, telefone, cargo_funcionario, especialidade, endereco, data_nascimento, matricula, ano_admissao, formacao, habilidades, ano_experiencia, genero);
+        this.frontend_backend = frontend_backend;
+        this.visao_holistica = visao_holistica;
+        this.colaborativo = colaborativo;
+        this.frameworks_ui = frameworks_ui;
+        this.linguagens_servidor = linguagens_servidor;
+        this.banco_de_dados = banco_de_dados;
+        this.seguranca_web = seguranca_web;
+        this.integracao_api = integracao_api;
+        this.versionamento = versionamento;
+    }
+    DadosFullStack(){
+        super.DadosDev()
+        console.log(``);
+        console.log(``);
+        console.log(``);
+        console.log(``);
+        console.log(``);
+        console.log(``);
+        console.log(``);
+        console.log(``);
+        console.log(``);
+    }
+} */

@@ -1,4 +1,4 @@
-class Conta {
+/* class Conta {
     private tipo_conta: string;
     private data_abertuta: Date;
 
@@ -90,4 +90,4 @@ class MetaFinanceira {
     }
 }
 const meta1 = new MetaFinanceira(cliente1, 20000);
-console.log(meta1,transacao1)
+console.log(meta1,transacao1) */

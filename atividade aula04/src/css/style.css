@@ -1,0 +1,48 @@
+/* Custom CSS */
+
+/* Estilo para o corpo da página */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para o conteúdo dentro do container */
+  .container {
+    padding-top: 50px;
+  }
+  
+  /* Estilo para os cabeçalhos das seções */
+  h2 {
+    color: #007bff;
+  }
+  
+  /* Estilo para o menu de navegação */
+  .navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar-brand {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ccc;
+  }
+  
+  /* Estilo para as seções */
+  section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Espaçamento entre as seções */
+  section + section {
+    margin-top: 20px;
+  }
+  

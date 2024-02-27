@@ -1,24 +1,43 @@
 "use strict";
-class Conta {
-    tipo_conta;
-    data_abertuta;
-    constructor(tipo_conta) { }
-    mostrarDados() {
-        console.log(`Conta: ${this.tipo_conta}`);
+/* class Conta {
+    private tipo_conta: string;
+    private data_abertuta: Date;
+
+    constructor(
+        tipo_conta: string) {}
+        
+    mostrarDados(){
+    console.log(`Conta: ${this.tipo_conta}`)
     }
 }
-class CadastroUser extends Conta {
-    nome;
-    cpf;
-    endereco;
-    data_nasc;
-    profissao;
-    saldo_pessoal;
-    receita;
-    despesas;
-    historico_transacao;
-    valor_meta;
-    constructor(nome, cpf, endereco, data_nasc, profissao, tipo_conta, saldo_pessoal, receita, despesas, historico_transacao, valor_meta) {
+
+
+class CadastroUser extends Conta
+{
+    nome: string;
+    private cpf: string;
+    public endereco: string;
+    public data_nasc: Date;
+    public profissao: string;
+    private saldo_pessoal: number;
+    private receita: number;
+    private despesas: number;
+    private historico_transacao: number;
+    public valor_meta: number;
+
+    constructor(
+        nome: string,
+        cpf: string,
+        endereco: string,
+        data_nasc: Date,
+        profissao: string,
+        tipo_conta: string,
+        saldo_pessoal: number,
+        receita: number,
+        despesas: number,
+        historico_transacao: number,
+        valor_meta: number) {
+
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -29,32 +48,47 @@ class CadastroUser extends Conta {
         this.receita = receita;
         this.despesas = despesas;
         this.historico_transacao = historico_transacao;
-        this.valor_meta = valor_meta;
+        this.valor_meta = valor_meta
     }
 }
 const cliente1 = new CadastroUser('Maria Silva', '123.456.789-10', 'Potengi', new Date('1985-5-15'), 'Professora', 'corrente', 20000, 2000, 1000, 2, 100000);
+
+
+
 class Transacao {
-    cliente;
-    descricao;
-    valor;
-    categoria;
-    data;
-    constructor(cliente, descricao, valor, categoria, data) {
-        this.cliente = cliente;
-        this.descricao = descricao;
-        this.valor = valor;
-        this.categoria = categoria;
-        this.data = data;
+    cliente: CadastroUser;
+    descricao: string;
+    valor: number;
+    categoria: string;
+    data: Date;
+
+    constructor(
+        cliente: CadastroUser,
+        descricao: string,
+        valor: number,
+        categoria: string,
+        data: Date) {
+
+        this.cliente = cliente
+        this.descricao = descricao
+        this.valor = valor
+        this.categoria = categoria
+        this.data = data
     }
 }
-const transacao1 = new Transacao(cliente1, 'mercado', 20, 'alimentos', new Date("2023-2-25"));
+const transacao1 = new Transacao(cliente1,'mercado', 20, 'alimentos', new Date("2023-2-25"));
+
 class MetaFinanceira {
-    cliente;
-    progresso;
-    constructor(cliente, progresso) {
+    cliente: CadastroUser;
+    progresso: number;
+
+    constructor(
+        cliente: CadastroUser,
+        progresso: number) {
+
         this.cliente = cliente;
-        this.progresso = progresso;
+        this.progresso = progresso
     }
 }
 const meta1 = new MetaFinanceira(cliente1, 20000);
-console.log(meta1, transacao1);
+console.log(meta1,transacao1) */ 
