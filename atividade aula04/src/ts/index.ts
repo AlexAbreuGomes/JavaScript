@@ -129,8 +129,8 @@ class Consulta {
         console.log('-------------------------------------------------------------');
     }
 }
-const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2024-2-2'));
-consulta1.mostrarDados3();
+//const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2024-2-2'));
+//consulta1.mostrarDados3();
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#formFuncionario');
