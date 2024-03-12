@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Verificar se existem dados no localStorage
     if (nome && email && telefone && dataNascimento && endereco && cpf && genero) {
         // Adicionar os novos dados à tabela
-        const tbody = document.getElementById('pacientesTableBody');
+        const tbody = document.getElementById('pacienteTableBody');
         const newRow = document.createElement('tr');
         newRow.innerHTML = `
             <td>${nome}</td>
@@ -25,14 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Inserir a nova linha no início da tabela
         tbody.insertBefore(newRow, tbody.firstChild);
-
-        // Limpar os campos do localStorage após adicionar à tabela
-        localStorage.removeItem('nomePaciente');
-        localStorage.removeItem('emailPaciente');
-        localStorage.removeItem('telefonePaciente');
-        localStorage.removeItem('dataNascimentoPaciente');
-        localStorage.removeItem('enderecoPaciente');
-        localStorage.removeItem('cpfPaciente');
-        localStorage.removeItem('generoPaciente');
+        localStorage.clear();
     }
+
+       
 });

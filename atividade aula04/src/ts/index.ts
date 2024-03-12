@@ -4,11 +4,11 @@ class Pessoa {
         public endereco: string,
         protected email: string,
         public data_nascimento: Date,
-        private telefone: string,
+        public telefone: string,
         protected cpf: string,
         protected genero?: string) { }
 
-    mostrarDados() {
+    /*mostrarDados() {
         //console.log(`----------------------------Dados Pessoa--------------------------------`);
         console.log(`Nome: ${this.nome}`);
         console.log(`Endereço: ${this.endereco}`);
@@ -20,7 +20,7 @@ class Pessoa {
             console.log(`Genero: ${this.genero}`);
         }
         //console.log(`------------------------------------------------------------------------`);
-    }
+    }*/
 }
 
 class Funcionario extends Pessoa {
@@ -55,7 +55,7 @@ class Funcionario extends Pessoa {
     }
 
 
-    mostrarDados() {
+    /*mostrarDados() {
         console.log(`----------Dados do Funcionario--------------------------------`);
         super.mostrarDados()
         console.log(`Cargo: ${this.cargo_funcionario}`);
@@ -64,16 +64,16 @@ class Funcionario extends Pessoa {
         //console.log(`Admissão: ${this.ano_admissao.toLocaleDateString('pt-BR')}`);
         //console.log(`Formação: ${this.formacao}`);
         console.log('--------------------------------------------------------------');
-    }
+    }*/
 
 }
-const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Rua das Flores, 123", new Date('1990-5-15'), 1001, "masculino");
+/*const funcionario1 = new Funcionario("João Silva", "123.456.789-00", "joao@example.com", "(00) 1234-5678", "Medico", "Rua das Flores, 123", new Date('1990-5-15'), 1001, "masculino");
 
 
-funcionario1.mostrarDados();
+funcionario1.mostrarDados();*/
 
 class Paciente extends Pessoa {
-    consultas: Funcionario;
+    //consultas: Funcionario;
 
     constructor(
         nome: string,
@@ -82,25 +82,25 @@ class Paciente extends Pessoa {
         data_nascimento: Date,
         telefone: string,
         cpf: string,
-        consultas: Funcionario,
+       // consultas: Funcionario,
         genero: string) {
 
         super(nome, endereco, email, data_nascimento, telefone, cpf, genero);
-        this.consultas = consultas
+        //this.consultas = consultas
 
     }
 
-    mostrarDados2() {
+   /* mostrarDados2() {
         console.log(`-------------------------paciente----------------------------`)
         super.mostrarDados();
         //console.log(`Consulta: ${(funcionario1.especialidade)}`);
         console.log('-------------------------------------------------------------');
-    }
+    }*/
 
 }
-const paciente1 = new Paciente("Ana Silva", "Rua das Flores, 123", "ana@example.com", new Date('1995-3-10'), "(00) 1234-5678", "987.654.321-00", funcionario1, "Feminino");
+/*const paciente1 = new Paciente("Ana Silva", "Rua das Flores, 123", "ana@example.com", new Date('1995-3-10'), "(00) 1234-5678", "987.654.321-00", funcionario1, "Feminino");
 
-paciente1.mostrarDados2();
+paciente1.mostrarDados2();*/
 
 class Consulta {
 
@@ -119,7 +119,7 @@ class Consulta {
         this.data_consulta = data_consulta
     }
 
-    mostrarDados3() {
+    /*mostrarDados3() {
         console.log(`---------------Dados da Consulta-----------------------------`);
         console.log(`Nome do Paciente: ${paciente1.nome}`);
         //console.log(`Especialidade: ${funcionario1.especialidade}`);
@@ -127,7 +127,7 @@ class Consulta {
         console.log(`Data da Consulta: ${this.data_consulta.toLocaleDateString('pt-BR')}`);
         //console.log(`Consulta: ${funcionario1.especialidade}`);
         console.log('-------------------------------------------------------------');
-    }
+    }*/
 }
 //const consulta1 = new Consulta(paciente1, 'cardiologista', 'joão silva', new Date('2024-2-2'));
 //consulta1.mostrarDados3();
@@ -162,6 +162,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
             //redirecionar para a pagina da tabela
             window.location.href = './funcionario.html';
+        });
+    } else {
+        console.error('O formulário não foi encontrado.');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#formPaciente');
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const nome = (document.getElementById('nome') as HTMLInputElement).value;
+            const email = (document.getElementById('email') as HTMLInputElement).value;
+            const telefone = (document.getElementById('telefone') as HTMLInputElement).value;
+            const dataNascimento = (document.getElementById('dataNascimento') as HTMLInputElement).value;
+            const endereco = (document.getElementById('endereco') as HTMLInputElement).value;
+            const cpf = (document.getElementById('cpf') as HTMLInputElement).value;
+            const genero = (document.getElementById('genero') as HTMLSelectElement).value;
+            //const cargo = (document.getElementById('cargo') as HTMLInputElement).value;
+            //const matricula = (document.getElementById('matricula') as HTMLInputElement).value;
+            const dataNascimentoFormatada = new Date(dataNascimento).toLocaleDateString('pt-BR'); // formatar a data formato brasileiro
+
+
+            //armazenar os dados do funcionario no localStorege
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('email', email);
+            localStorage.setItem('telefone', telefone);
+            localStorage.setItem('dataNascimento', dataNascimentoFormatada);
+            localStorage.setItem('endereco', endereco);
+            localStorage.setItem('cpf', cpf);
+            localStorage.setItem('genero', genero);
+            //localStorage.setItem('cargo', cargo);
+            //localStorage.setItem('matricula', matricula);
+
+            //redirecionar para a pagina da tabela
+            window.location.href = './paciente.html';
         });
     } else {
         console.error('O formulário não foi encontrado.');
